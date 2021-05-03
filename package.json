@@ -7,8 +7,10 @@
     "test": "jest",
     "jest:watch": "jest --watch",
     "build:styles": "sass ./src/styles/index.scss ./dist/style.css",
-    "build:scripts": "babel ./src --out-dir=./dist",
-    "build": "npm-run-all build:*"
+    "transpile:scripts": "babel ./src --out-dir=./temp",
+    "build:scripts": "webpack ./temp/index.js --mode=production",
+    "clean:temp": "del-cli --force ./temp",
+    "build": "npm-run-all transpile:* build:* clean:temp"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.0",
+    "del-cli": "^3.0.1",
     "jest": "^26.6.3",
     "npm-run-all": "^4.1.5",
     "sass": "^1.32.12",

@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "jest:watch": "jest --watch",
     "build:styles": "sass ./src/styles/index.scss ./dist/style.css",
     "transpile:scripts": "babel ./src --out-dir=./temp",
     "build:scripts": "webpack ./temp/index.js --mode=production",
     "clean:temp": "del-cli --force ./temp",
+    "test": "jest",
     "build": "npm-run-all transpile:* build:* clean:temp"
   },
   "keywords": [],

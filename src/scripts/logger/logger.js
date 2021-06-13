@@ -1,3 +1,5 @@
+import './logger.css';
+
 export const createLogger = (name) => {
   const logs = [];
   const obj = { name: "Mike", age: 21 };

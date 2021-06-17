@@ -3,7 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "targets": "> 1%",
+        "targets": "> 0.1%",
         "useBuiltIns": "usage", // connecting the necessary polyfills
         "corejs": 3,
         "modules": false
